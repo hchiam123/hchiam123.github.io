@@ -20,7 +20,7 @@
       let links = '';
       fetch('../list-of-links/content.txt')
         .then(function(response) {
-          response.text();
+          return response.text();
         })
         .then(function(text) {
           links = text.split('\n');
