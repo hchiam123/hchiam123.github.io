@@ -10,7 +10,7 @@ $('a').css({
 $('h1').css('position', 'relative').animate({'top': 0, 'left': 0}, 100);
 $('a').css('position', 'relative').animate({'left': 0}, 100);
 
-$('a, main p').on('click', function() {
+$('a, main p, h1').on('click', function() {
   var url = $(this).attr('href');
   var newTab = $(this).attr('target');
   $(this).removeAttr('href');
@@ -35,4 +35,11 @@ $('a, main p').on('click', function() {
       }
     }, 290); 
   })
+});
+
+$('h2>a').on('click', function() {
+  $('h2').animate({
+    marginLeft: '+=1000em',
+    marginRight: '-=1000em',
+  });
 });
