@@ -129,3 +129,14 @@ main.list-of-links {
     border-radius: 2em !important;
   }
 }
+
+@media only screen and (max-width: 340px) {
+  h1 {
+    font-size: large;
+    margin-bottom: 2em;
+  }
+
+  .door {
+    min-width: 10px !important;
+  }
+}
