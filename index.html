@@ -16,5 +16,14 @@
       <a class="door" href="doors/consciousness-and-spirituality/index.html">Consciousness and Spirituality</a>
     </main>
     <script src="animation.js"></script>
+    <script>
+      // animate h1 only on the main page
+      $('h1').css({
+        position: 'absolute',
+        top: '-5em',
+        left: '-50%',
+      });
+      $('h1').css('position', 'relative').animate({'top': 0, 'left': 0}, 100);
+    </script>
   </body>
 </html>
