@@ -21,9 +21,8 @@ $('a, main p').on('click', function() {
     $(this).css({
       'transition': '0.3s',
       'z-index': 900,
-      'opacity': '0.5 !important',
       'cursor': 'not-allowed !important',
-      'text-decoration': 'none !important;}',
+      'text-decoration': 'none !important',
       'transform': 'scale(20)',
     });
     // next();
@@ -34,6 +33,6 @@ $('a, main p').on('click', function() {
       } else {
         window.location.href = url;
       }
-    }, 300); 
+    }, 290); 
   })
 });
