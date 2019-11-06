@@ -23,7 +23,7 @@ fetch(textFilePath)
     p.appendChild(a);
     document.getElementsByTagName('main')[0].appendChild(p);
   });
-})
+});
 $('a').css({
   position: 'absolute',
   left: '-100%',
