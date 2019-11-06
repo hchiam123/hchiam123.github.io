@@ -8,24 +8,40 @@ fetch(textFilePath)
   return response.text();
 })
 .then(function(text) {
-  var links = text.split('\n').filter(function(line) {
+  var lines = text.split('\n').filter(function(line) {
     return line !== '';
   });
-  links.forEach(function(link) {
-    if (!link.startsWith('http://') && !link.startsWith('https://')) {
-      link = 'https://' + link;
+  lines.forEach(function(line) {
+    var descriptionPattern = /^ *(D|d)escription *(=|equals?) */;
+    if (descriptionPattern.test(line)) {
+      createDescription(line.replace(descriptionPattern, ''));
+    } else if (!line.startsWith('https://') && !line.startsWith('http://')) {
+      line = 'https://' + line;
+      createLink(line);
+    } else { // assume link if line doesn't start with "description = "
+      createLink(line);
     }
-    var a = document.createElement('a');
-    a.setAttribute('href', link);
-    a.setAttribute('target', '_blank');
-    a.innerHTML = link;
-    var p = document.createElement('p');
-    p.appendChild(a);
-    document.getElementsByTagName('main')[0].appendChild(p);
   });
-  $('*:not(h1)>a').css({
+  $('*:not(h1)>p').css({
     position: 'absolute',
     left: '-100%',
   });
-  $('*:not(h1)>a').css('position', 'relative').animate({'left': 0}, 100);
+  $('*:not(h1)>p').css('position', 'relative').animate({'left': 0}, 100);
 });
+
+function createLink(url) {
+  var a = document.createElement('a');
+  a.setAttribute('href', url);
+  a.setAttribute('target', '_blank');
+  a.innerHTML = url;
+  var p = document.createElement('p');
+  p.appendChild(a);
+  document.getElementsByTagName('main')[0].appendChild(p);
+}
+
+function createDescription(text) {
+  var p = document.createElement('p');
+  p.innerHTML = text;
+  p.className = 'description';
+  document.getElementsByTagName('main')[0].appendChild(p);
+}

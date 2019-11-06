@@ -92,6 +92,12 @@ main p {
 main.list-of-links {
   margin-top: -3em;
   padding: 1em;
+  margin: auto;
+  width: 50%;
+}
+
+main.list-of-links p.description {
+  text-align: left;
 }
 
 .doors-container {
@@ -143,4 +149,9 @@ main.list-of-links {
   .door {
     min-width: 10px !important;
   }
+}
+
+hr {
+  border: 0.2em solid #0F2080;
+  border-radius: 1em;
 }
