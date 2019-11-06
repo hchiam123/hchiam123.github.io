@@ -14,6 +14,12 @@ $('a, main p, h1').on('click', function() {
   var url = $(this).attr('href');
   var newTab = $(this).attr('target');
   $(this).removeAttr('href');
+  $('h2').css('color', 'transparent');
+  $(this).addClass('expand');
+  $('a:not(.expand)').css({
+    background: 'transparent',
+    color: 'transparent',
+  });
   $(this).css({
     transition: '0s',
     color: 'transparent',
