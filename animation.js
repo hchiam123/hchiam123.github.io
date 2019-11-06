@@ -39,7 +39,7 @@ $('a, main p, h1').on('click', function() {
 
 $('h2>a').on('click', function() {
   $('h2').animate({
-    marginLeft: '+=1000em',
-    marginRight: '-=1000em',
+    marginLeft: '+=500em',
+    marginRight: '-=500em',
   });
 });
