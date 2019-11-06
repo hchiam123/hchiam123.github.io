@@ -18,6 +18,7 @@ h1 {
 }
 
 h2 {
+  position: relative;
   background: #0F2080;
   color: snow;
   text-align: center;

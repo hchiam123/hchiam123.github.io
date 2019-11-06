@@ -39,18 +39,21 @@ $('*:not(h2)>a').on('click', function() {
       } else {
         window.location.href = url;
       }
-    }, 290); 
+    }, 500); 
   })
 });
 
 $('h2>a').on('click', function() {
   var url = $(this).attr('href');
   $(this).removeAttr('href');
-  $('h2').css('position', 'relative');
   $('h2').animate({
     left: '100vw',
   }, 100);
+  $('h1').css({
+    top: '-5em',
+    left: '50%',
+  });
   setTimeout(function() {
     window.location.href = url;
-  }, 290); 
+  }, 500); 
 });
