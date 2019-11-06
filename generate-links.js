@@ -23,9 +23,9 @@ fetch(textFilePath)
     p.appendChild(a);
     document.getElementsByTagName('main')[0].appendChild(p);
   });
-  $('a').css({
+  $('*:not(h1)>a').css({
     position: 'absolute',
     left: '-100%',
   });
-  $('a').css('position', 'relative').animate({'left': 0}, 100);
+  $('*:not(h1)>a').css('position', 'relative').animate({'left': 0}, 100);
 });
