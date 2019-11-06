@@ -11,7 +11,6 @@ fetch(textFilePath)
   const links = text.split('\n').filter(function(line) {
     return line !== '';
   });
-  console.log(links);
   links.forEach(function(link) {
     if (!link.startsWith('http://') && !link.startsWith('https://')) {
       link = 'https://' + link;
@@ -24,4 +23,9 @@ fetch(textFilePath)
     p.appendChild(a);
     document.getElementsByTagName('main')[0].appendChild(p);
   });
+})
+$('a').css({
+  position: 'absolute',
+  left: '-100%',
 });
+$('a').css('position', 'relative').animate({'left': 0}, 100);
