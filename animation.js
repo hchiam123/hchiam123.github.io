@@ -1,14 +1,8 @@
-$('h1').css({
-  position: 'absolute',
-  top: '-5em',
-  left: '50%',
-});
-$('a').css({
+$('*:not(h1)>a').css({
   position: 'absolute',
   left: '-100%',
 });
-$('h1').css('position', 'relative').animate({'top': 0, 'left': 0}, 100);
-$('a').css('position', 'relative').animate({'left': 0}, 100);
+$('*:not(h1)>a').css('position', 'relative').animate({'left': 0}, 100);
 
 $('*:not(h2)>a').on('click', function() {
   var url = $(this).attr('href');
@@ -49,10 +43,6 @@ $('h2>a').on('click', function() {
   $('h2').animate({
     left: '100vw',
   }, 100);
-  $('h1').css({
-    top: '-5em',
-    left: '50%',
-  });
   setTimeout(function() {
     window.location.href = url;
   }, 500); 
