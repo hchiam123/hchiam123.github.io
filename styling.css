@@ -81,6 +81,13 @@ main.list-of-links {
 @media only screen and (max-width: 600px) {
   h1 {
     font-size: x-large;
+    margin-bottom: 2em;
+  }
+
+  h2 {
+    font-size: large;
+    margin-left: -2em;
+    margin-right: -2em;
   }
 
   .flex-container {
@@ -88,7 +95,12 @@ main.list-of-links {
   }
 
   .door {
-    width: 100% !important;
+    min-width: 100px !important;
+    margin: 1em auto;
     padding: 0.5em 5em !important;
+  }
+
+  main p {
+    font-size: small;
   }
 }
