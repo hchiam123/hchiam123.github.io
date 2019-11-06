@@ -10,7 +10,7 @@ $('a').css({
 $('h1').css('position', 'relative').animate({'top': 0, 'left': 0}, 100);
 $('a').css('position', 'relative').animate({'left': 0}, 100);
 
-$('a, main p, h1').on('click', function() {
+$('*:not(h2)>a').on('click', function() {
   var url = $(this).attr('href');
   var newTab = $(this).attr('target');
   $(this).removeAttr('href');
@@ -24,7 +24,7 @@ $('a, main p, h1').on('click', function() {
     transition: '0s',
     color: 'transparent',
   }).delay(100).queue(function(next) {
-    $(this).css({
+    $(this).parent().css({
       'transition': '0.3s',
       'z-index': 900,
       'cursor': 'not-allowed !important',
@@ -44,8 +44,13 @@ $('a, main p, h1').on('click', function() {
 });
 
 $('h2>a').on('click', function() {
+  var url = $(this).attr('href');
+  $(this).removeAttr('href');
+  $('h2').css('position', 'relative');
   $('h2').animate({
-    marginLeft: '+=100em',
-    marginRight: '-=100em',
-  }, 0);
+    left: '100vw',
+  }, 100);
+  setTimeout(function() {
+    window.location.href = url;
+  }, 290); 
 });
