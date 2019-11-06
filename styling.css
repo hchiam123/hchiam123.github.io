@@ -65,6 +65,18 @@ a:hover, a:focus {
   box-shadow: 0 5px 7px rgba(0,0,0,1), 0 0 0 1em rgba(255, 255, 255, 0.75);
 }
 
+a.back-button {
+  position: relative !important;
+  left: -0.5em !important;
+  margin: 0;
+  padding: 0;
+  width: 0;
+}
+
+a.back-button:hover, a.back-button:focus {
+  text-decoration: none;
+}
+
 main {
   text-align: center;
 }
