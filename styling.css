@@ -69,8 +69,8 @@ a.back-button {
   position: relative !important;
   left: -0.5em !important;
   margin: 0;
-  padding: 0;
   width: 0;
+  padding: 0;
 }
 
 a.back-button:hover, a.back-button:focus {
@@ -106,6 +106,8 @@ main.list-of-links {
     font-size: large;
     margin-left: -2em;
     margin-right: -2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
 
   .flex-container {
@@ -120,5 +122,10 @@ main.list-of-links {
 
   main p {
     font-size: small;
+  }
+
+  a.back-button {
+    padding: 0.5em !important;
+    border-radius: 2em !important;
   }
 }
