@@ -17,9 +17,15 @@
     <!-- <iframe src="../list-of-links/content.html" scrolling="yes"/> -->
     <script src="../animation.js"></script>
     <script>
+      let links = '';
       fetch('../list-of-links/content.txt')
-        .then(response => response.text())
-        .then(text => alert(text));
+        .then(function(response) {
+          response.text();
+        })
+        .then(function(text) {
+          links = text.split('\n');
+          alert(links.length)
+        });
     </script>
   </body>
 </html>
