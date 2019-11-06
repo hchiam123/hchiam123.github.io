@@ -34,6 +34,6 @@ $('a, main p').on('click', function() {
       } else {
         window.location.href = url;
       }
-    }, 10); 
+    }, 311); 
   })
 });
