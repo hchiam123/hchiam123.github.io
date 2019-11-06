@@ -78,6 +78,12 @@ main.list-of-links {
   padding: 1em;
 }
 
+.doors-container {
+  background: #0F2080;
+  border-radius: 1em;
+  margin-top: 1em;
+}
+
 @media only screen and (max-width: 600px) {
   h1 {
     font-size: x-large;
