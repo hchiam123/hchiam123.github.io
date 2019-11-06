@@ -2,7 +2,7 @@ const path = window.location.pathname;
 const pathParts = path.split('/');
 const door = pathParts[pathParts.length-3];
 const subsection = pathParts[pathParts.length-1].replace(/\.html$/, '');
-const textFilePath = '../list-of-links/' + door + '/' + subsection + '.txt';
+const textFilePath = '../../../list-of-links/' + door + '/' + subsection + '.txt';
 fetch(textFilePath)
 .then(function(response) {
   return response.text();
