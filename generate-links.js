@@ -11,6 +11,7 @@ fetch(textFilePath)
   const links = text.split('\n').filter(function(line) {
     return line !== '';
   });
+  console.log(links);
   links.forEach(function(link) {
     if (!link.startsWith('http://') && !link.startsWith('https://')) {
       link = 'https://' + link;
