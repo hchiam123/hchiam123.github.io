@@ -34,7 +34,6 @@ a {
   border: none;
   text-decoration: none;
   font-weight: bold;
-  word-wrap: break-word;
 }
 
 h1>a {
@@ -74,21 +73,25 @@ main {
 }
 
 main p {
-  margin: 3em;
-}
-
-iframe {
-  position: fixed;
-  width: 120%;
-  height: 100vh;
-  left: -10%;
-  margin-right: -10em;
-  border-radius: 1em;
-  border: solid;
-  overflow-y: auto;
+  margin: 3em 0;
 }
 
 main.list-of-links {
   margin-top: -3em;
   padding: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: x-large;
+  }
+
+  .flex-container {
+    flex-wrap: wrap;
+  }
+
+  .door {
+    width: 100% !important;
+    padding: 0.5em 5em !important;
+  }
 }
