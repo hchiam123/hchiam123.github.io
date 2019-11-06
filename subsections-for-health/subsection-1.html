@@ -9,11 +9,32 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   </head>
   <body>
-    <div class="sticky-position">
-      <h1><a href="/" aria-label="Go back to main page of Grace Foundation">Grace Foundation</a></h1>
-      <h2>Subsection 1 Name - under Holistic Health and Alternative Medicine</h2>
-    </div>
-    <iframe src="../list-of-links/content.html" scrolling="yes"/>
+    <h1><a href="/" aria-label="Go back to main page of Grace Foundation">Grace Foundation</a></h1>
+    <h2>Subsection 1 Name - under Holistic Health and Alternative Medicine</h2>
+    <main class="list-of-links"></main>
     <script src="../animation.js"></script>
+    <script>
+      fetch('../list-of-links/content.txt')
+        .then(function(response) {
+          return response.text();
+        })
+        .then(function(text) {
+          const links = text.split('\n').filter(function(line) {
+            return line !== '';
+          });
+          links.forEach(function(link) {
+            if (!link.startsWith('http://') && !link.startsWith('https://')) {
+              link = 'https://' + link;
+            }
+            const a = document.createElement('a');
+            a.setAttribute('href', link);
+            a.setAttribute('target', '_blank');
+            a.innerHTML = link;
+            const p = document.createElement('p');
+            p.appendChild(a);
+            document.getElementsByTagName('main')[0].appendChild(p);
+          });
+        });
+    </script>
   </body>
 </html>

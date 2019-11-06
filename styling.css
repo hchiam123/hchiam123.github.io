@@ -8,7 +8,6 @@ body {
   background: rgb(218, 245, 218);
   font-family: avenir, arial, sans-serif;
   padding: 2em;
-  overflow-x: hidden;
 }
 
 h1 {
@@ -91,10 +90,5 @@ iframe {
 
 main.list-of-links {
   margin-top: -3em;
-}
-
-.sticky-position {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
+  padding: 1em;
 }
