@@ -17,13 +17,15 @@ $('*:not(h2)>a').on('click', function() {
   $(this).css({
     transition: '0s',
     color: 'transparent',
+    position: 'relative',
   }).delay(100).queue(function(next) {
     $(this).parent().css({
-      'transition': '0.3s',
+      'transition': '0.1s',
       'z-index': 900,
+      'opacity': 0.5,
       'cursor': 'not-allowed !important',
       'text-decoration': 'none !important',
-      'transform': 'scale(20)',
+      'transform': 'scale(7)',
     });
     // next();
     if (!url) return;
