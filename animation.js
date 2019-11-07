@@ -22,7 +22,7 @@ $('*:not(h2)>a').on('click', function() {
     'box-shadow': 'none',
   }).queue(function(next) {
     $(this).parent().css({
-      'transition': '0.1s',
+      'transition': '0.5s',
       'z-index': 900,
       'opacity': 0.5,
       'cursor': 'not-allowed !important',
@@ -30,7 +30,7 @@ $('*:not(h2)>a').on('click', function() {
       'transform': 'scale(7)',
     });
     next();
-  }).animate({position: 'absolute', width: '100vw', height: '100vh', background: '#0F2080'}, 1000)
+  }).animate({position: 'absolute', width: '100vw', height: '100vh', background: '#0F2080'}, 500)
   .queue(function(next) {
     if (!url) return;
     if (newTab) {
