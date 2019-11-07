@@ -15,9 +15,10 @@ $('*:not(h2)>a').on('click', function() {
     color: 'transparent',
   });
   $(this).css({
-    transition: '0s',
-    color: 'transparent',
-    position: 'relative',
+    'transition': '0s',
+    'color': 'transparent',
+    'position': 'relative',
+    'box-shadow': 'none',
   }).delay(100).queue(function(next) {
     $(this).parent().css({
       'transition': '0.1s',
