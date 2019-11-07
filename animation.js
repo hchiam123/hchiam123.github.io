@@ -9,6 +9,7 @@ $('*:not(h2)>a').on('click', function() {
   var newTab = $(this).attr('target');
   $(this).removeAttr('href');
   $('h2').css('color', 'transparent');
+  $('hr').css('display', 'none');
   $(this).addClass('expand');
   $('a:not(.expand)').css({
     background: 'transparent',
@@ -19,7 +20,7 @@ $('*:not(h2)>a').on('click', function() {
     'color': 'transparent',
     'position': 'relative',
     'box-shadow': 'none',
-  }).delay(100).queue(function(next) {
+  }).queue(function(next) {
     $(this).parent().css({
       'transition': '0.1s',
       'z-index': 900,
@@ -28,16 +29,17 @@ $('*:not(h2)>a').on('click', function() {
       'text-decoration': 'none !important',
       'transform': 'scale(7)',
     });
-    // next();
+    next();
+  }).animate({position: 'absolute', width: '100vw', height: '100vh', background: '#0F2080'}, 1000)
+  .queue(function(next) {
     if (!url) return;
-    setTimeout(function() {
-      if (newTab) {
-        window.open(url, newTab);
-      } else {
-        window.location.href = url;
-      }
-    }, 500); 
-  })
+    if (newTab) {
+      window.open(url, newTab);
+    } else {
+      window.location.href = url;
+    }
+    // next();
+  });
 });
 
 $('h2>a').on('click', function() {
