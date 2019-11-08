@@ -52,3 +52,30 @@ $('h2>a').on('click', function() {
     window.location.href = url;
   }, 500); 
 });
+
+$('h2').draggable({
+  axis: 'x',
+  drag: function(e, ui) {
+    if (ui.position.left < 0) {
+      return false;
+    }
+    var left = $("h2").position().left;
+    var fifthWidth = $(window).width()/10;
+    var isPastFifthLeftOrRight = Math.abs(left) > fifthWidth;
+    if (isPastFifthLeftOrRight) {
+      var url = $(this).find('a').attr('href');
+      $(this).animate({
+        left: '100vw',
+        opacity: 0,
+      }, 100);
+      setTimeout(function() {
+        window.location.href = url;
+      }, 500); 
+    }
+  },
+  stop: function() {
+    $('h2').animate({
+      left: '0',
+    }, 100);
+  },
+});
