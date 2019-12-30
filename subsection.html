@@ -11,7 +11,7 @@
   </head>
   <body>
     <h1><a href="/" aria-label="Go back to main page of My Site">My Site</a></h1>
-    <h2><a class="back-button" href="./doors/topic.html" aria-label="Go back to section">&#x25C0; </a>Subsection 1</h2>
+    <h2><a class="back-button" href="./doors/topic.html" aria-label="Go back to section">&#x25C0; </a><span id="header-text">Subsection 1</span></h2>
     <main class="list-of-links"></main>
     <hr>
     <script src="./animation.js"></script>
@@ -21,7 +21,11 @@
       var topic = parameters.filter(function (argument) {
         return argument.startsWith('topic=');
       })[0].split('=')[1];
+      var subsection = parameters.filter(function (argument) {
+        return argument.startsWith('subsection=');
+      })[0].split('=')[1];
       document.getElementsByClassName('back-button')[0].href = './topic.html?topic=' + topic;
+      document.getElementById('header-text').innerHTML = subsection;
     </script>
   </body>
 </html>

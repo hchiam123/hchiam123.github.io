@@ -11,7 +11,7 @@
   </head>
   <body>
     <h1><a href="/" aria-label="Go back to main page of My Site">My Site</a></h1>
-    <h2><a class="back-button" href="/" aria-label="Go back to main sections">&#x25C0; </a>Topic 1</h2>
+    <h2><a class="back-button" href="/" aria-label="Go back to main sections">&#x25C0; </a><span id="header-text">Topic 1</span></h2>
     <main></main>
     <hr>
     <script src="../../animation.js"></script>
@@ -21,12 +21,13 @@
         return argument.startsWith('topic=');
       })[0].split('=')[1];
       var topicURL = 'https://api.github.com/repos/hchiam123/hchiam123.github.io/contents/doors/' + topic;
+      document.getElementById('header-text').innerHTML = topic;
       var subsections = getSubsections();
       async function getSubsections() {
         var response = await fetch(topicURL);
         var myJson = await response.json();
         subsections = myJson.map(function (element) {
-          return element.name;
+          return element.name.replace(/\.txt$/i, '');
         });
         createList();
       }
