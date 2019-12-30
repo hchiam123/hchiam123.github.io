@@ -12,13 +12,16 @@
   <body>
     <h1><a href="/">My Site</a></h1>
     <main class="flex-container doors-container">
-      <a class="door" href="doors/topic-1/index.html">Topic 1</a>
-      <a class="door" href="doors/topic-2/index.html">Topic 2</a>
-      <a class="door" href="doors/topic-3/index.html">Topic 3</a>
+      <% for (var i=0; i<topics.length; i++) { %>
+        <a class="door" href="<%= topics[i] %>"><%= topics[i] %></a>
+      <% } %>
     </main>
     <hr>
     <script src="animation.js"></script>
     <script>
+      function goToTopic(topic) {
+        $('main').html('');
+      }
       // animate h1 only on the main page
       $('h1').css({
         position: 'absolute',

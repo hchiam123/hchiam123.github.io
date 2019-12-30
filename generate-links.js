@@ -1,8 +1,8 @@
-var path = window.location.pathname;
+var path = window.location.pathname.replace(/%20/g, ' ');
 var pathParts = path.split('/');
-var door = pathParts[pathParts.length-3];
-var subsection = pathParts[pathParts.length-1].replace(/\.html$/, '');
-var textFilePath = '../../../lists-of-links/' + door + '/' + subsection + '.txt';
+var topic = pathParts[1];
+var subsection = pathParts[2];
+var textFilePath = '../../doors/' + topic + '/' + subsection + '.txt';
 fetch(textFilePath)
 .then(function(response) {
   return response.text();

@@ -13,11 +13,10 @@
     <h1><a href="/" aria-label="Go back to main page of My Site">My Site</a></h1>
     <h2><a class="back-button" href="/" aria-label="Go back to main sections">&#x25C0; </a>Topic 1</h2>
     <main>
-      <p><a href="subsections/subsection-1.html">Subsection 1</a></p>
-      <p><a href="subsections/subsection-2.html">Subsection 2</a></p>
-      <p><a href="subsections/subsection-3.html">Subsection 3</a></p>
-      <p><a href="subsections/subsection-4.html">Subsection 4</a></p>
-    </main>
+      <% for (var i=0; i<subsections.length; i++) { %>
+        <p><a class="door" href="/<%= topic %>/<%= subsections[i] %>"><%= subsections[i] %></a></p>
+      <% } %>
+    </mai>
     <hr>
     <script src="../../animation.js"></script>
   </body>
