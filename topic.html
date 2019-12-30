@@ -35,7 +35,7 @@
         var main = document.getElementsByTagName('main')[0];
         main.innerHTML = ''
         for (var i=0; i<subsections.length; i++) {
-          main.innerHTML += '<p><a class="door" href="./subsection.html?topic=' + topic + '&subsection=' + subsections[i] + '">' + subsections[i] + '</a></p>';
+          main.innerHTML += '<p><a class="door" href="./subsection.html?topic=' + topic + '&subsection=' + subsections[i] + '">' + subsections[i].replace(/.txt$/i, '') + '</a></p>';
         }
       }
     </script>
