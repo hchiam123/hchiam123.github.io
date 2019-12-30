@@ -7,7 +7,6 @@ var subsection = pathParameters.filter(function (argument) {
   return argument.startsWith('subsection=');
 })[0].split('=')[1];
 var textFilePath = './doors/' + topic + '/' + subsection;
-alert(textFilePath)
 fetch(textFilePath)
 .then(function(response) {
   return response.text();
