@@ -27,7 +27,7 @@
         var response = await fetch(topicURL);
         var myJson = await response.json();
         subsections = myJson.map(function (element) {
-          return element.name.replace(/\.txt$/i, '');
+          return element.name;
         });
         createList();
       }
