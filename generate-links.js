@@ -1,8 +1,13 @@
-var path = window.location.pathname.replace(/%20/g, ' ');
-var pathParts = path.split('/');
-var topic = pathParts[1];
-var subsection = pathParts[2];
-var textFilePath = '../../doors/' + topic + '/' + subsection + '.txt';
+var path = window.location.href.replace(/%20/g, ' ');
+var pathParameters = path.split('?')[1].split('&');
+var topic = pathParameters.filter(function (argument) {
+  return argument.startsWith('topic=');
+})[0].split('=')[1];
+var subsection = pathParameters.filter(function (argument) {
+  return argument.startsWith('subsection=');
+})[0].split('=')[1];
+var textFilePath = './doors/' + topic + '/' + subsection;
+alert(textFilePath)
 fetch(textFilePath)
 .then(function(response) {
   return response.text();
